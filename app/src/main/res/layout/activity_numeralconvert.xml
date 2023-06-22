@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center">
+
+    <Button
+        android:id="@+id/rom_to_dec_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/rom_to_dec_BTN"
+        android:tooltipText="@string/rom_to_deC_BTNToolTip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rom_to_dec_txtBox" />
+
+    <Button
+        android:id="@+id/dec_to_rom_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/dec_to_rom_BTN"
+        android:tooltipText="@string/dec_to_rom_BTNToolTip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dec_to_rom_txtBox" />
+
+    <EditText
+        android:id="@+id/dec_to_rom_txtBox"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="216dp"
+        android:clickable="false"
+        android:ems="10"
+        android:hint="@string/dec_to_rom_txtBox"
+        android:inputType="number"
+        android:tooltipText="@string/dec_to_rom_ToolTipTXTBOX"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/rom_to_dec_txtBox"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:capitalize="characters"
+        android:ems="10"
+        android:hint="@string/rom_to_dec_txtBox"
+        android:inputType="textCapSentences|textCapWords|textCapCharacters"
+        android:textAllCaps="true"
+        android:tooltipText="@string/rom_to_dec_ToolTipTXTBOX"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dec_to_rom_BTN" />
+
+    <TextView
+        android:id="@+id/tv_Rom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="Convert"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:background="@drawable/converter_border"
+        app:layout_constraintBottom_toTopOf="@+id/dec_to_rom_txtBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

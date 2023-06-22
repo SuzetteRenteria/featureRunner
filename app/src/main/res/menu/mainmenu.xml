@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/jokesGame"
+        android:title="@string/jokes_Game" ></item>
+
+    <item android:id="@+id/numeralGame"
+        android:title="@string/numeral_Converter"></item>
+
+    <item android:id="@+id/exit_option"
+        android:title="@string/exit_option"></item>
+</menu>

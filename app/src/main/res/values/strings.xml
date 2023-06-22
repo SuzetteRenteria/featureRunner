@@ -1,0 +1,35 @@
+<resources>
+    //main app name
+    <string name="app_name">JokesApp</string>
+
+    //activity_main.xml strings
+    <string name="BTN_J1">JOKE 1</string>
+    <string name="BTN_J1_ANS">JOKE 1 ANSWER</string>
+    <string name="j1">Why do fathers take an extra pair of socks when they go golfing?</string>
+    <string name="j1_ANS">In case they get a hole in one!</string>
+
+    <string name="BTN_J2">JOKE 2</string>
+    <string name="BTN_J2_ANS">JOKE 2 ANSWER</string>
+    <string name="j2">What do a tick and the Eiffel Tower have in common?</string>
+    <string name="j2_ANS">They are both Paris sites.</string>
+
+    <string name="tv_JokeDisplay">JOKE DISPLAY</string>
+
+    //mainmenu.xml strings
+    <string name="jokes_Game">Jokes Game</string>
+    <string name="numeral_Converter">Number Converter</string>
+    <string name="exit_option">Exit</string>
+
+    //activity_numeralconvert.xml strings
+    <string name="dec_to_rom_ToolTipTXTBOX">Enter Greek number to convert to Roman numeral</string>
+    <string name="rom_to_dec_ToolTipTXTBOX">Enter Roman numeral to convert to Greek number</string>
+    <string name="dec_to_rom_BTNToolTip">Greek to Roman numeral converter</string>
+    <string name="rom_to_deC_BTNToolTip">Roman to Greek numeral converter</string>
+    <string name="dec_to_rom_txtBox">Enter Greek Number</string>
+    <string name="rom_to_dec_txtBox">Enter Roman Numeral</string>
+    <string name="dec_to_rom_BTN">Greek Converter</string>
+    <string name="rom_to_dec_BTN">Roman Converter</string>
+    <string name="conversion_TxtView">Convertion Results</string>
+
+
+</resources>
