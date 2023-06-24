@@ -1,0 +1,7 @@
+<resources>
+    <!-- activity clicker gamge dimensions -->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="clicker_rad">250dp</dimen>
+    <dimen name="clicker_timeDisp">50dp</dimen>
+    <dimen name="clicker_clicksDisp">30dp</dimen>
+</resources>
