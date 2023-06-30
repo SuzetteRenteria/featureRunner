@@ -39,18 +39,21 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.jokesGame:
-                //setContentView(R.layout.activity_main);
                 Intent intentJokes = new Intent(MainActivity.this, dadJokesActivity.class);
                 startActivity(intentJokes);
                 break;
             case R.id.numeralGame:
-                //setContentView(R.layout.activity_numeralconvert);
                 Intent intentConverter = new Intent(MainActivity.this, NumeralConverterActivity.class);
                 startActivity(intentConverter);
+                break;
+            case R.id.clickerGame:
+                Intent intentClicker = new Intent(MainActivity.this, ClickerGameActivity.class);
+                startActivity(intentClicker);
                 break;
             case R.id.exit_option:
                 finish();
                 break;
+
         }
         return super.onOptionsItemSelected(item);
     }

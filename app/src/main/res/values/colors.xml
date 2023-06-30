@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="pink">#F25278</color>
+    <color name="clkr_loader">#C51162</color>
 </resources>

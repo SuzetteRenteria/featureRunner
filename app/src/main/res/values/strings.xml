@@ -1,8 +1,8 @@
 <resources>
-    //main app name
+    <!-- main app name -->
     <string name="app_name">JokesApp</string>
 
-    //activity_main.xml strings
+    <!-- activity_main.xml strings -->
     <string name="BTN_J1">JOKE 1</string>
     <string name="BTN_J1_ANS">JOKE 1 ANSWER</string>
     <string name="j1">Why do fathers take an extra pair of socks when they go golfing?</string>
@@ -15,12 +15,12 @@
 
     <string name="tv_JokeDisplay">JOKE DISPLAY</string>
 
-    //mainmenu.xml strings
+    <!-- mainmenu.xml strings -->
     <string name="jokes_Game">Jokes Game</string>
     <string name="numeral_Converter">Number Converter</string>
     <string name="exit_option">Exit</string>
 
-    //activity_numeralconvert.xml strings
+    <!-- activity_numeralconvert.xml strings -->
     <string name="dec_to_rom_ToolTipTXTBOX">Enter Greek number to convert to Roman numeral</string>
     <string name="rom_to_dec_ToolTipTXTBOX">Enter Roman numeral to convert to Greek number</string>
     <string name="dec_to_rom_BTNToolTip">Greek to Roman numeral converter</string>
@@ -29,7 +29,18 @@
     <string name="rom_to_dec_txtBox">Enter Roman Numeral</string>
     <string name="dec_to_rom_BTN">Greek Converter</string>
     <string name="rom_to_dec_BTN">Roman Converter</string>
-    <string name="conversion_TxtView">Convertion Results</string>
+    <string name="conversion_TxtView">Conversion Results</string>
+    <string name="title_activity_clicker_game">ClickerGameActivity</string>
+
+    <!-- activity clicker game strings-->
+    <string name="clicker_Game">Clicker</string>
+    <string name="clickerBTNA">CLICKER A</string>
+    <string name="clickerBTNB">CLICKER B</string>
+    <string name="tv_clksLeft">Clicks:  </string>
+    <string name="clicker_StartBtn">START</string>
+    <string name="clkrOVER">Final Count: </string>
+    <string name="timeLeft">Timer: </string>
+    <string name="clkrPopUpWinGameOver">GAME OVER!</string>
 
 
 </resources>

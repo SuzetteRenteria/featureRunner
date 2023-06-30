@@ -7,6 +7,12 @@
     <item android:id="@+id/numeralGame"
         android:title="@string/numeral_Converter"></item>
 
-    <item android:id="@+id/exit_option"
+    <item
+        android:id="@+id/clickerGame"
+        android:title="@string/clicker_Game"></item>
+
+    <item
+        android:id="@+id/exit_option"
         android:title="@string/exit_option"></item>
+
 </menu>

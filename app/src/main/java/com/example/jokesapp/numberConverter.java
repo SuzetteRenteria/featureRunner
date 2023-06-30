@@ -31,7 +31,6 @@ public class numberConverter{
         map.put(1000, "M");
     }
 
-
     public static void printmp1(SortedMap<Integer, String> map){
         for(Map.Entry<Integer, String> m: map.entrySet()){
             System.out.println("KEY: " + m.getKey() + " VAL: " + m.getValue());
@@ -49,6 +48,7 @@ public class numberConverter{
         Scanner scan = new Scanner(System.in);
         return scan.next().toUpperCase();
     }
+
     public static SortedMap<String, Integer> mp1Reverse(SortedMap<Integer, String> ogmap){
         /*
         In this example, we start with a SortedMap originalMap where the keys are integers and the
@@ -152,8 +152,6 @@ public class numberConverter{
         }
         return res;
     }
-
-
 
 /*
     public static void main(String[] args) {
