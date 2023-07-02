@@ -54,7 +54,7 @@
         android:layout_height="195dp"
         android:layout_marginStart="104dp"
         android:layout_marginTop="36dp"
-        android:indeterminate="false"
+        android:indeterminateOnly="false"
         android:progressDrawable="@drawable/round_prog_bar"
         app:flow_verticalAlign="center"
         app:layout_constraintStart_toStartOf="parent"

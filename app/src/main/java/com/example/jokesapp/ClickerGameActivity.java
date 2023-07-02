@@ -37,10 +37,16 @@ public class ClickerGameActivity extends AppCompatActivity {
         popupWindow.showAtLocation(this.findViewById(R.id.clickerGame), Gravity.CENTER, 0, 0);
     } //Display popup window at game over
 
-    public int getHighScore(int highScore, int clksCntr){
+    public int getHighScore(){
         return (clksCntr > highScore) ? (highScore = clksCntr):(clksCntr);
-    }
+    } // compare for high score
+    public int incClksCntr(){
+        return clksCntr++;
+    } // increment count of clicks
 
+    public int decSecsLim(){
+        return secsLim--;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,18 +59,21 @@ public class ClickerGameActivity extends AppCompatActivity {
         tv_ClksLeft = (TextView) findViewById(R.id.tv_ClksLeft);
         tv_clkrTimer = (TextView) findViewById(R.id.tv_clkrTimer);
         roundProgBar = (ProgressBar) findViewById(R.id.roundProgBar);
-        final CountDownTimer tmr = new CountDownTimer(20000, 1000) {
+        final CountDownTimer tmr = new CountDownTimer(20*1000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                secsLim--;
-                String t = getString(R.string.timeLeft);
-                tv_clkrTimer.setText(t + Integer.toString(secsLim));
+                int t = decSecsLim();
+                String t1 = getString(R.string.timeLeft);
+                roundProgBar.setProgress(t * 5);
+                roundProgBar.setMax(100);
+                tv_clkrTimer.setText(t1 + Integer.toString(t));
             }
 
             @Override
             public void onFinish() {
                 clkrBtnA.setEnabled(false);
                 clkrBtnB.setEnabled(false);
+                roundProgBar.setProgress(0);
                 //add win
                 popUpWin();
             }
@@ -95,9 +104,10 @@ public class ClickerGameActivity extends AppCompatActivity {
                 clkrBtnA.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        clksCntr++;
+                        //clksCntr++;
                         String t2 = getString(R.string.tv_clksLeft);
-                        tv_ClksLeft.setText(t2 + Integer.toString(clksCntr));
+                        int it2 = incClksCntr();
+                        tv_ClksLeft.setText(t2 + Integer.toString(it2));
                     }
                 });
             }
@@ -109,9 +119,11 @@ public class ClickerGameActivity extends AppCompatActivity {
                 clkrBtnB.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        clksCntr++;
+                        //clksCntr++;
+                        //incClksCntr(clksCntr);
                         String t3 = getString(R.string.tv_clksLeft);
-                        tv_ClksLeft.setText( t3 + Integer.toString(clksCntr));
+                        int it3 = incClksCntr();
+                        tv_ClksLeft.setText(t3 + Integer.toString(it3));
                     }
                 });
             }
