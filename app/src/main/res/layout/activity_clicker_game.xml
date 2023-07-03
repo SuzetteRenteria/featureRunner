@@ -8,31 +8,17 @@
     tools:context=".ClickerGameActivity">
 
     <Button
-        android:id="@+id/clkrBtnA"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="56dp"
-        android:layout_weight="1"
-        android:background="@drawable/clicker_border"
-        android:text="@string/clickerBTNA"
-        app:flow_horizontalAlign="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ClksLeft" />
-
-    <Button
         android:id="@+id/clkrBtnB"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/clicker_border"
         android:text="@string/clickerBTNB"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/resetBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clkrBtnA"
-        app:layout_constraintVertical_bias="0.509" />
+        app:layout_constraintTop_toBottomOf="@+id/roundProgBar" />
 
     <TextView
         android:id="@+id/tv_ClksLeft"
@@ -84,5 +70,19 @@
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toEndOf="@+id/tv_ClksLeft"
         app:layout_constraintTop_toBottomOf="@+id/roundProgBar" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/clicker_border"
+        android:text="@string/clkrReset"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundProgBar"
+        app:layout_constraintVertical_bias="0.876" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

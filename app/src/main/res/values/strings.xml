@@ -36,11 +36,14 @@
     <string name="clicker_Game">Clicker</string>
     <string name="clickerBTNA">CLICKER A</string>
     <string name="clickerBTNB">CLICKER B</string>
-    <string name="tv_clksLeft">Clicks:  </string>
+    <string name="tv_clksLeft">Clicks: </string>
+    <string name="clksLeft_msgg">Clicks: %1$d</string>
     <string name="clicker_StartBtn">START</string>
     <string name="clkrOVER">Final Count: </string>
     <string name="timeLeft">Timer: </string>
+    <string name="timerLeft_msg">Timer: %1$d</string>
     <string name="clkrPopUpWinGameOver">GAME OVER!</string>
+    <string name="clkrReset">RESET</string>
 
 
 </resources>
