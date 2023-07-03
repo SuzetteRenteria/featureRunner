@@ -32,7 +32,7 @@ public class ClickerGameActivity extends AppCompatActivity {
 
     public void popUpWin(){
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        View gameOverWin = inflater.inflate(R.layout.clkr_gameover_popupwin, null);
+        View gameOverWin = inflater.inflate(R.layout.clkr_gameover_popupwin, findViewById(R.id.clickerGame));
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
         boolean focusable = true;
@@ -51,8 +51,8 @@ public class ClickerGameActivity extends AppCompatActivity {
         return secsLim--;
     } // decrement timer val to 0
 
-    public int setToDefclksCntr(){ return clksCntr = clksCntr_DEFAULT; }
-    public int setToDefsecsLim(){ return secsLim = secsLim_DEFAULT; }
+    public void setToDefclksCntr(){ clksCntr = clksCntr_DEFAULT; }
+    public void setToDefsecsLim(){ secsLim = secsLim_DEFAULT; }
     public int getclksCntr(){
         return clksCntr;
     }
@@ -91,59 +91,32 @@ public class ClickerGameActivity extends AppCompatActivity {
             }
         };
 
-        clkrStartBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clkrBtnB.setEnabled(true);
-                clkrStartBtn.setEnabled(false);
-                clksCntr = 0;
-                secsLim = secsLim_DEFAULT;
-                tmr.start();
-            }
-            /*
-            public void onFinish(View v){
-                // game over
-                clkrBtnB.setEnabled(false);
-                String t1 = getString(R.string.clkrOVER);
-                tv_ClksLeft.setText(t1 + Integer.toString(clksCntr));
-            }
-
-             */
+        clkrStartBtn.setOnClickListener(v ->{
+            clkrBtnB.setEnabled(true);
+            clkrStartBtn.setEnabled(false);
+            clksCntr = clksCntr_DEFAULT;
+            secsLim = secsLim_DEFAULT;
+            tmr.start();
         });
 
 
+        clkrReset.setOnClickListener(v -> {
+            tmr.cancel();
 
-        clkrReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tmr.cancel();
+            clkrStartBtn.setEnabled(true);
+            setToDefclksCntr();
+            setToDefsecsLim();
 
-                clkrStartBtn.setEnabled(true);
-                setToDefclksCntr();
-                setToDefsecsLim();
-
-                tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, getclksCntr()));
-                tv_clkrTimer.setText(getString(R.string.timerLeft_msg, getSecsLim()));
-                roundProgBar.setProgress(0);
-            }
+            tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, getclksCntr()));
+            tv_clkrTimer.setText(getString(R.string.timerLeft_msg, getSecsLim()));
+            roundProgBar.setProgress(0);
         });
 
-
-        Thread tT = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                clkrBtnB.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //clksCntr++;
-                        //incClksCntr(clksCntr);
-                        //String t3 = getString(R.string.tv_clksLeft);
-                        //int it3 = incClksCntr();
-                        tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, incClksCntr()));
-                    }
-                });
-            }
-        }); // Button B thread
+        Thread tT = new Thread(() ->
+                clkrBtnB.setOnClickListener(v ->
+                        tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, incClksCntr()))
+                )
+        ); // Button B thread
 
         tT.start();
 
