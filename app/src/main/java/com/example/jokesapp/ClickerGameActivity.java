@@ -1,10 +1,8 @@
 package com.example.jokesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Gravity;
@@ -16,20 +14,16 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.example.jokesapp.R;
 
-public class ClickerGameActivity extends AppCompatActivity {
+public class ClickerGameActivity extends AppCompatActivity implements LifecycleOwner {
+
+    private ClickerGameViewModel vm;
     Button clkrBtnB;
     Button clkrStartBtn;
     Button clkrReset;
     TextView tv_ClksLeft;
     TextView tv_clkrTimer;
     ProgressBar roundProgBar;
-    static final int clksCntr_DEFAULT = 0;
-    int clksCntr = clksCntr_DEFAULT; // clicks counter
-    static final int secsLim_DEFAULT = 20; // for this game I decided 20 sec range
-    int secsLim = secsLim_DEFAULT; // starting timer
-    private int highScore = 0; // track high score
 
     public void popUpWin(){
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -41,31 +35,12 @@ public class ClickerGameActivity extends AppCompatActivity {
         final PopupWindow popupWindow = new PopupWindow(gameOverWin, width, height, focusable);
         popupWindow.showAtLocation(parent, Gravity.CENTER, 0, 0);
     } //Display popup window at game over
-    public int getHighScore(){
-        return (clksCntr > highScore) ? (highScore = clksCntr):(clksCntr);
-    } // compare for high score
-    public int incClksCntr(){
-        return clksCntr++;
-    } // increment count of clicks
-
-    public int decSecsLim(){
-        return secsLim--;
-    } // decrement timer val to 0
-
-    public void setToDefclksCntr(){ clksCntr = clksCntr_DEFAULT; }
-    public void setToDefsecsLim(){ secsLim = secsLim_DEFAULT; }
-    public int getclksCntr(){
-        return clksCntr;
-    }
-    public int getSecsLim(){
-        return secsLim;
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clicker_game);
+        vm = new ViewModelProvider(this).get(ClickerGameViewModel.class);
 
         clkrBtnB = findViewById(R.id.clkrBtnB);
         clkrStartBtn = findViewById(R.id.clkrStartBtn);
@@ -73,20 +48,23 @@ public class ClickerGameActivity extends AppCompatActivity {
         tv_ClksLeft = findViewById(R.id.tv_ClksLeft);
         tv_clkrTimer = findViewById(R.id.tv_clkrTimer);
         roundProgBar = findViewById(R.id.roundProgBar);
-        final CountDownTimer tmr = new CountDownTimer(secsLim_DEFAULT * 1000, 1000) {
+        final CountDownTimer tmr = new CountDownTimer(vm.getsecsLim_DEFAULT() * 1000L, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                roundProgBar.setProgress(decSecsLim() * 5);
-                roundProgBar.setMax(100);
-                tv_clkrTimer.setText(getString(R.string.timerLeft_msg, getSecsLim()));
+                int decTemp = vm.decSecsLim();
+                final int progMax = 100;
+                final int progSetUp = progMax / vm.getsecsLim_DEFAULT();
+                roundProgBar.setProgress(decTemp * progSetUp);
+                roundProgBar.setMax(progMax);
+                tv_clkrTimer.setText(getString(R.string.timerLeft_msg, vm.getSecsLim()));
             }
 
             @Override
             public void onFinish() {
                 clkrBtnB.setEnabled(false);
                 roundProgBar.setProgress(0);
-                tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, getclksCntr()));
-                tv_clkrTimer.setText(getString(R.string.timerLeft_msg, getSecsLim()));
+                tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, vm.getclksCntr()));
+                tv_clkrTimer.setText(getString(R.string.timerLeft_msg, vm.getSecsLim()));
                 popUpWin(); // popup window
             }
         };
@@ -94,8 +72,9 @@ public class ClickerGameActivity extends AppCompatActivity {
         clkrStartBtn.setOnClickListener(v ->{
             clkrBtnB.setEnabled(true);
             clkrStartBtn.setEnabled(false);
-            clksCntr = clksCntr_DEFAULT;
-            secsLim = secsLim_DEFAULT;
+            vm.clksCntr = vm.getclksCntr_DEFAULT();
+            vm.secsLim = vm.getsecsLim_DEFAULT();
+            tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, vm.getclksCntr_DEFAULT()));
             tmr.start();
         });
 
@@ -104,17 +83,17 @@ public class ClickerGameActivity extends AppCompatActivity {
             tmr.cancel();
 
             clkrStartBtn.setEnabled(true);
-            setToDefclksCntr();
-            setToDefsecsLim();
+            vm.setToDefclksCntr();
+            vm.setToDefsecsLim();
 
-            tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, getclksCntr()));
-            tv_clkrTimer.setText(getString(R.string.timerLeft_msg, getSecsLim()));
+            tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, vm.getclksCntr()));
+            tv_clkrTimer.setText(getString(R.string.timerLeft_msg, vm.getSecsLim()));
             roundProgBar.setProgress(0);
         });
 
         Thread tT = new Thread(() ->
                 clkrBtnB.setOnClickListener(v ->
-                        tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, incClksCntr()))
+                        tv_ClksLeft.setText(getString(R.string.clksLeft_msgg, vm.incClksCntr()))
                 )
         ); // Button B thread
 
