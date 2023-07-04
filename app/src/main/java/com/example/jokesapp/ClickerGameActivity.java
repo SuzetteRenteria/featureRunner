@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Gravity;
@@ -32,14 +33,14 @@ public class ClickerGameActivity extends AppCompatActivity {
 
     public void popUpWin(){
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        View gameOverWin = inflater.inflate(R.layout.clkr_gameover_popupwin, findViewById(R.id.clickerGame));
+        ViewGroup parent = findViewById(R.id.clickerGame);
+        View gameOverWin = inflater.inflate(R.layout.clkr_gameover_popupwin, parent, false);
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
         boolean focusable = true;
         final PopupWindow popupWindow = new PopupWindow(gameOverWin, width, height, focusable);
-        popupWindow.showAtLocation(this.findViewById(R.id.clickerGame), Gravity.CENTER, 0, 0);
+        popupWindow.showAtLocation(parent, Gravity.CENTER, 0, 0);
     } //Display popup window at game over
-
     public int getHighScore(){
         return (clksCntr > highScore) ? (highScore = clksCntr):(clksCntr);
     } // compare for high score
@@ -66,16 +67,15 @@ public class ClickerGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clicker_game);
 
-        clkrBtnB = (Button) findViewById(R.id.clkrBtnB);
-        clkrStartBtn = (Button) findViewById(R.id.clkrStartBtn);
-        clkrReset = (Button) findViewById(R.id.resetBtn);
-        tv_ClksLeft = (TextView) findViewById(R.id.tv_ClksLeft);
-        tv_clkrTimer = (TextView) findViewById(R.id.tv_clkrTimer);
-        roundProgBar = (ProgressBar) findViewById(R.id.roundProgBar);
+        clkrBtnB = findViewById(R.id.clkrBtnB);
+        clkrStartBtn = findViewById(R.id.clkrStartBtn);
+        clkrReset = findViewById(R.id.resetBtn);
+        tv_ClksLeft = findViewById(R.id.tv_ClksLeft);
+        tv_clkrTimer = findViewById(R.id.tv_clkrTimer);
+        roundProgBar = findViewById(R.id.roundProgBar);
         final CountDownTimer tmr = new CountDownTimer(secsLim_DEFAULT * 1000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                //int t = decSecsLim();
                 roundProgBar.setProgress(decSecsLim() * 5);
                 roundProgBar.setMax(100);
                 tv_clkrTimer.setText(getString(R.string.timerLeft_msg, getSecsLim()));
