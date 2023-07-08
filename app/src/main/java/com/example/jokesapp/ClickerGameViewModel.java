@@ -41,5 +41,4 @@ public class ClickerGameViewModel extends ViewModel {
         return secsLim;
     }
 
-
 }

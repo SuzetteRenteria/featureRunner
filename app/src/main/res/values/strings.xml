@@ -45,5 +45,9 @@
     <string name="clkrPopUpWinGameOver">GAME OVER!</string>
     <string name="clkrReset">RESET</string>
 
+    <!--Splash screen -->
+    <string name="splashTitle">Feature Runner</string>
+    <string name="splashDescription">Intro splash dragon eye</string>
+
 
 </resources>

@@ -1,0 +1,20 @@
+{
+  "users:": [
+    {
+      "id": "000",
+      "name": "userA",
+      "score": "0"
+    },
+    {
+      "id": "001",
+      "name": "userB",
+      "score": "0"
+    },
+    {
+      "id": "003",
+      "name": "userC",
+      "score": "0"
+    }
+
+  ]
+}

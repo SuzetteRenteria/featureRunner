@@ -1,62 +1,102 @@
+/*
 package com.example.jokesapp;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class Intro_Splash_Screen extends AppCompatActivity {
+
+    public static int SPLASH_SCREEN = 5 * 1000;
+    //vars
+    Animation topAnim;
+    Animation bottAnim;
+    ImageView img;
+    TextView splashTitle;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.app_intro_splash);
+
+        //Anims
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_splah_anim);
+        bottAnim = AnimationUtils.loadAnimation(this, R.anim.bott_splash_anim);
+
+        //Hooks
+        img = findViewById(R.id.dragon_splash);
+        splashTitle = findViewById(R.id.splash_Title);
+
+        img.setAnimation(topAnim);
+        img.setAnimation(bottAnim);
+        splashTitle.setAnimation(bottAnim);
+
+        Handler handler = new Handler();
+        Runnable runnable = () -> {
+            Intent intent = new Intent(Intro_Splash_Screen.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        };
+        handler.postDelayed(runnable, SPLASH_SCREEN);
+    }
+}
+ */
+package com.example.jokesapp;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    public static int SPLASH_SCREEN = 5 * 1000;
+    //vars
+    Animation topAnim;
+    Animation bottAnim;
+    ImageView img;
+    TextView splashTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.app_intro_splash);
 
-        //TODO: Create a main page display because I moved old display
-        //      to dadJokesActivity.
-    }
+        //Anims
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_splah_anim);
+        bottAnim = AnimationUtils.loadAnimation(this, R.anim.bott_splash_anim);
 
-    //inflate menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.mainmenu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+        //Hooks
+        img = findViewById(R.id.dragon_splash);
+        splashTitle = findViewById(R.id.splash_Title);
 
-    //connect menu to multiple layouts
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.jokesGame:
-                Intent intentJokes = new Intent(MainActivity.this, dadJokesActivity.class);
-                startActivity(intentJokes);
-                break;
-            case R.id.numeralGame:
-                Intent intentConverter = new Intent(MainActivity.this, NumeralConverterActivity.class);
-                startActivity(intentConverter);
-                break;
-            case R.id.clickerGame:
-                Intent intentClicker = new Intent(MainActivity.this, ClickerGameActivity.class);
-                startActivity(intentClicker);
-                break;
-            case R.id.exit_option:
-                finish();
-                break;
+        img.setAnimation(topAnim);
+        img.setAnimation(bottAnim);
+        splashTitle.setAnimation(bottAnim);
 
-        }
-        return super.onOptionsItemSelected(item);
+        Handler handler = new Handler();
+        Runnable runnable = () -> {
+            Intent intent = new Intent(MainActivity.this, Dashboard.class);
+            startActivity(intent);
+            finish();
+        };
+        handler.postDelayed(runnable, SPLASH_SCREEN);
     }
 }
-
-

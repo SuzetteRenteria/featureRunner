@@ -48,6 +48,8 @@ public class ClickerGameActivity extends AppCompatActivity implements LifecycleO
         tv_ClksLeft = findViewById(R.id.tv_ClksLeft);
         tv_clkrTimer = findViewById(R.id.tv_clkrTimer);
         roundProgBar = findViewById(R.id.roundProgBar);
+
+
         final CountDownTimer tmr = new CountDownTimer(vm.getsecsLim_DEFAULT() * 1000L, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -98,6 +100,5 @@ public class ClickerGameActivity extends AppCompatActivity implements LifecycleO
         ); // Button B thread
 
         tT.start();
-
     }
 }
