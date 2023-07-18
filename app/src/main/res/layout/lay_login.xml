@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_Login"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.AppCompat.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_purple"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".LoginAct">
+
+    <ImageView
+        android:id="@+id/imgV_DragonEye"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/splashDescription"
+        android:src="@drawable/dragon_splash" />
+
+    <TextView
+        android:id="@+id/tv_Login_Banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="@string/LoginBanner"
+        android:textColor="@color/earth_green"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/tv_login_WelcomeNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/akaya_telivigala"
+        android:paddingBottom="20dp"
+        android:text="@string/loginWelcomeNote"
+        android:textColor="@color/earth_green"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--Username Input Box -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userName_TVLogin"
+            style="@style/CustomTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userName_LoginInp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/loginUsername"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Password Input Box -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passWord_TVLogin"
+            style="@style/CustomPasswordInputBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passWord_LoginInp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/loginPassword"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Login Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:text="@string/loginBTN"
+            android:textColor="@android:color/holo_orange_light" />
+
+        <!--Create New Account Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/newAcc_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_grey"
+            android:text="@string/createNewAcc"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+</LinearLayout>

@@ -5,7 +5,7 @@
     android:id="@+id/clickerGame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClickerGameActivity">
+    tools:context=".ClickerGameAct">
 
     <Button
         android:id="@+id/clkrBtnB"
@@ -78,7 +78,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/clicker_border"
         android:text="@string/clkrReset"
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

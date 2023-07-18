@@ -65,7 +65,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainAct extends AppCompatActivity {
 
     public static int SPLASH_SCREEN = 5 * 1000;
     //vars
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
         Handler handler = new Handler();
         Runnable runnable = () -> {
-            Intent intent = new Intent(MainActivity.this, Dashboard.class);
+            Intent intent = new Intent(MainAct.this, LoginAct.class);
             startActivity(intent);
             finish();
         };

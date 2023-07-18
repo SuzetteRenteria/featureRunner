@@ -9,4 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pink">#F25278</color>
     <color name="clkr_loader">#C51162</color>
+    <color name="dark_grey">#797F7B</color>
+    <color name="holor_orange_light">@android:color/holo_orange_light</color>
+    <color name="error_red">#F51425</color>
+    <color name="burnt_orange">#D64104</color>
+    <color name="earth_green">#44A019</color>
+    <color name="blue_purple">#671AB4</color>
+    <color name="white_purple">#DAD2E0</color>
 </resources>

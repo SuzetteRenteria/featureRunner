@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/view_SignUp"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_purple"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".SignUpAct">
+
+        <ImageView
+            android:id="@+id/imgV_DragonEye"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="@string/splashDescription"
+            android:src="@drawable/dragon_splash" />
+
+        <TextView
+            android:id="@+id/tv_signup_Banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:fontFamily="@font/akaya_telivigala"
+            android:text="@string/signUpBanner"
+            android:textColor="@color/earth_green"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/tv_signUp_WelcomeNote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/akaya_telivigala"
+            android:paddingBottom="20dp"
+            android:text="@string/signUpWelcomeNote"
+            android:textColor="@color/earth_green"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--First Name Input Box -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstName_TVSignUp"
+                style="@style/CustomTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fName_SignUpInp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/signUpFirstName"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--Last Name Input Box -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastName_TVSignUp"
+                style="@style/CustomTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lName_SignUpInp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/signUpLastName"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--Username (userLoginName) Input Box -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userName_TVSignUp"
+                style="@style/CustomTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userName_SignUpInp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/userLoginName"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--Password Input Box -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_TVSignUp"
+                style="@style/CustomPasswordInputBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passWord_SignUpInp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/accPassword"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--Sign Up Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/signUp_Btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/signUpBTN"
+                android:textColor="@android:color/holo_orange_light" />
+
+            <!--Already a Member Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/alrUser_Btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark_grey"
+                android:text="@string/alreadyMember"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

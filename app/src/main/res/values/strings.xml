@@ -31,6 +31,7 @@
     <string name="rom_to_dec_BTN">Roman Converter</string>
     <string name="conversion_TxtView">Conversion Results</string>
     <string name="title_activity_clicker_game">ClickerGameActivity</string>
+    <string name="tv_Convert">Convert</string>
 
     <!-- activity clicker game strings-->
     <string name="clicker_Game">Clicker</string>
@@ -49,5 +50,21 @@
     <string name="splashTitle">Feature Runner</string>
     <string name="splashDescription">Intro splash dragon eye</string>
 
+    <!--Sign Up page-->
+    <string name="signUpBanner">Lets Run</string>
+    <string name="signUpWelcomeNote">Sign Up to get started</string>
+    <string name="signUpFirstName">First Name</string>
+    <string name="signUpLastName">Last Name</string>
+    <string name="userLoginName">Username</string>
+    <string name="accPassword">Password</string>
+    <string name="signUpBTN">SIGN UP</string>
+    <string name="alreadyMember">Already a member?</string>
 
+    <!--Login Page -->
+    <string name="loginWelcomeNote">Welcome back! Login to get started</string>
+    <string name="loginUsername">Username</string>
+    <string name="loginPassword">Password</string>
+    <string name="LoginBanner">Lets Run</string>
+    <string name="loginBTN">LOGIN</string>
+    <string name="createNewAcc">Create New Account?</string>
 </resources>

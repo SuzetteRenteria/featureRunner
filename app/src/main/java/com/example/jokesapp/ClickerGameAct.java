@@ -15,7 +15,7 @@ import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class ClickerGameActivity extends AppCompatActivity implements LifecycleOwner {
+public class ClickerGameAct extends AppCompatActivity implements LifecycleOwner {
 
     private ClickerGameViewModel vm;
     Button clkrBtnB;
@@ -39,7 +39,7 @@ public class ClickerGameActivity extends AppCompatActivity implements LifecycleO
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clicker_game);
+        setContentView(R.layout.lay_clicker_game);
         vm = new ViewModelProvider(this).get(ClickerGameViewModel.class);
 
         clkrBtnB = findViewById(R.id.clkrBtnB);

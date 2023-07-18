@@ -12,7 +12,7 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.lay_main);
     }
     //inflate menu
     @Override
@@ -26,19 +26,19 @@ public class Dashboard extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.jokesGame:
-                Intent intentJokes = new Intent(Dashboard.this, dadJokesActivity.class);
+                Intent intentJokes = new Intent(Dashboard.this, dadJokesAct.class);
                 startActivity(intentJokes);
-                //finish();
+                finish();
                 break;
             case R.id.numeralGame:
-                Intent intentConverter = new Intent(Dashboard.this, NumeralConverterActivity.class);
+                Intent intentConverter = new Intent(Dashboard.this, NumeralConverterAct.class);
                 startActivity(intentConverter);
-                //finish();
+                finish();
                 break;
             case R.id.clickerGame:
-                Intent intentClicker = new Intent(Dashboard.this, ClickerGameActivity.class);
+                Intent intentClicker = new Intent(Dashboard.this, ClickerGameAct.class);
                 startActivity(intentClicker);
-                //finish();
+                finish();
                 break;
             case R.id.exit_option:
                 finish();
