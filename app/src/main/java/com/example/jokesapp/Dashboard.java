@@ -24,6 +24,7 @@ public class Dashboard extends AppCompatActivity {
     //connect menu to multiple layouts
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        /*
         switch (item.getItemId()) {
             case R.id.jokesGame:
                 Intent intentJokes = new Intent(Dashboard.this, dadJokesAct.class);
@@ -44,6 +45,27 @@ public class Dashboard extends AppCompatActivity {
                 finish();
                 break;
         }
+         */
+
+        if(item.getItemId() == R.id.jokesGame){
+            Intent intentJokes = new Intent(Dashboard.this, dadJokesAct.class);
+            startActivity(intentJokes);
+            finish();
+        }else if(item.getItemId() == R.id.numeralGame){
+            Intent intentConverter = new Intent(Dashboard.this, NumeralConverterAct.class);
+            startActivity(intentConverter);
+            finish();
+        }else if(item.getItemId() == R.id.clickerGame){
+            Intent intentClicker = new Intent(Dashboard.this, ClickerGameAct.class);
+            startActivity(intentClicker);
+            finish();
+        }else if(item.getItemId() == R.id.exit_option){
+            finish();
+        }
+
+
+
+
         return super.onOptionsItemSelected(item);
     }
 }

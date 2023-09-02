@@ -1,0 +1,19 @@
+A: Refactored ClickerGameModelView to ClickerGameMVC
+B: Refactored SignUpModelView to SignUpMVC
+C: This version contains a functional updating of the database from the SignUp class
+    which pulls user info from the UI
+TODO:
+    * Still need to implement the Games directory in DB
+        -> add individual games
+        -> add {username: {top1Score, top2Score, top3Score
+                highscore: top1Score}} pairs
+    * Implement Highscore values to each game
+    * Implement Highscore UI in each game
+
+TODO TO START:
+    * Fully implement the Dashboard with view card style per game
+
+IMPROVEMENTS:
+    * Add a splash screen between user Sign in/ user Login and the Dashboard class that displays
+        a welcome banner with the user's username
+

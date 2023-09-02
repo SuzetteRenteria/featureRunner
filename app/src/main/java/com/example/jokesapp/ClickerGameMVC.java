@@ -1,15 +1,8 @@
 package com.example.jokesapp;
 
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-
 import androidx.lifecycle.ViewModel;
 
-public class ClickerGameViewModel extends ViewModel {
+public class ClickerGameMVC extends ViewModel {
     static final int clksCntr_DEFAULT = 0;
     int clksCntr = clksCntr_DEFAULT; // clicks counter
     static final int secsLim_DEFAULT = 20; // for this game I decided 20 sec range

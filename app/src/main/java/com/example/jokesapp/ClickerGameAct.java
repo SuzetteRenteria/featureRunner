@@ -1,7 +1,6 @@
 package com.example.jokesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -15,9 +14,9 @@ import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class ClickerGameAct extends AppCompatActivity implements LifecycleOwner {
+public class ClickerGameAct extends AppCompatActivity{
 
-    private ClickerGameViewModel vm;
+    private ClickerGameMVC vm;
     Button clkrBtnB;
     Button clkrStartBtn;
     Button clkrReset;
@@ -40,7 +39,7 @@ public class ClickerGameAct extends AppCompatActivity implements LifecycleOwner 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lay_clicker_game);
-        vm = new ViewModelProvider(this).get(ClickerGameViewModel.class);
+        vm = new ViewModelProvider(this).get(ClickerGameMVC.class);
 
         clkrBtnB = findViewById(R.id.clkrBtnB);
         clkrStartBtn = findViewById(R.id.clkrStartBtn);
